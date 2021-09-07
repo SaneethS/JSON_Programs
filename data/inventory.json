@@ -1,0 +1,40 @@
+{
+    "inventory": [
+        {
+            "type": "rice",
+            "name":"Basmati",
+            "weight": 15.00,
+            "pricePerKG": 52.45
+        },
+        {
+            "type": "rice",
+            "name":"Sona masoori",
+            "weight": 50.00,
+            "pricePerKG": 64.28
+        },
+        {
+            "type": "pulses",
+            "name":"Butter Beans",
+            "weight": 10.00,
+            "pricePerKG": 74.28
+        },
+        {
+            "type": "pulses",
+            "name":"yellow",
+            "weight": 12.00 ,
+            "pricePerKG": 90.26
+        },
+        {
+            "type": "wheat",
+            "name":"Common Wheat",
+            "weight": 12.00 ,
+            "pricePerKG": 54.12
+        },
+        {
+            "type": "wheat",
+            "name":"Emmer Wheat",
+            "weight": 13.00,
+            "pricePerKG": 80.12
+        }
+    ]
+}
