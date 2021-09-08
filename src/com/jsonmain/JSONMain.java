@@ -1,4 +1,5 @@
 package com.jsonmain;
+import com.deckofcards.DeckOfCards;
 import com.inventorymanagement.InventoryManager;
 import com.jsoninventory.*;
 public class JSONMain {
@@ -8,7 +9,9 @@ public class JSONMain {
 		
 //		JSONInventory.jsonInventory();
 		
-		InventoryManager.inventoryManager();
+//		InventoryManager.inventoryManager();
+		
+		DeckOfCards.deckOfCards();
 	}
 
 }
