@@ -1,0 +1,24 @@
+{
+	"stocks": [
+		{
+			"stockName" : "Mercedes",
+			"noOfShares" : 500,
+			"sharePrice" : 2000.00
+		},
+		{
+			"stockName" : "Hyundai",
+			"noOfShares" : 350,
+			"sharePrice" : 1500.00
+		},
+		{
+			"stockName" : "Jaguar",
+			"noOfShares" : 700,
+			"sharePrice" : 3000.00
+		},
+		{
+			"stockName" : "Skoda",
+			"noOfShares" : 400,
+			"sharePrice" : 1800.00
+		}
+	]
+}
