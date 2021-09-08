@@ -2,6 +2,7 @@ package com.jsonmain;
 import com.deckofcards.DeckOfCards;
 import com.inventorymanagement.InventoryManager;
 import com.jsoninventory.*;
+import com.stockmanagement.StockManagementSystem;
 public class JSONMain {
 
 	public static void main(String[] args) {
@@ -11,7 +12,9 @@ public class JSONMain {
 		
 //		InventoryManager.inventoryManager();
 		
-		DeckOfCards.deckOfCards();
+//		DeckOfCards.deckOfCards();
+		
+		StockManagementSystem.stockManagementSystem();
 	}
 
 }
