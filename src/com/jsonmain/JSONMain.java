@@ -3,6 +3,7 @@ import com.deckofcards.DeckOfCards;
 import com.inventorymanagement.InventoryManager;
 import com.jsoninventory.*;
 import com.stockaccount.CommercialDataProcessing;
+import com.stocklinkedlist.StockLinkedList;
 import com.stockmanagement.StockManagementSystem;
 public class JSONMain {
 
@@ -17,6 +18,8 @@ public class JSONMain {
 		
 //		StockManagementSystem.stockManagementSystem();
 		
-		CommercialDataProcessing.commercialDataProcessing();
+//		CommercialDataProcessing.commercialDataProcessing();
+		
+		StockLinkedList.stockLinkedList();
 	}
 }
