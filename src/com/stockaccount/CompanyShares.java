@@ -2,6 +2,11 @@ package com.stockaccount;
 
 import java.util.*;
 
+/**this is the class used to get getter and setters for stocksymbol and noOfShares to
+ * implement in other classes
+ * @author saneeths
+ *
+ */
 public class CompanyShares {
 	private String stockSymbol;
 	private long noOfShares;

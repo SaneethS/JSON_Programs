@@ -8,16 +8,31 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+/**this class is used to check the stock account of user where buy, sell, save and print
+ * of stocks is found
+ * @author saneeths
+ *
+ */
 public class StockAccount implements StockInterface{
-	private final String STOCKS_FILE = "data/stockAccount.json";
 	private String fileName;
     private JSONArray stocksData;
     List<CompanyShares> companyShares = new ArrayList<CompanyShares>();
+    
+    public List<CompanyShares> getCompanyShares() {
+        return companyShares;
+    }
+    
+    public void setCompanyShares(List<CompanyShares> companyShares) {
+        this.companyShares = companyShares;
+    }
     
     StockAccount(String fileName) {
     	this.fileName = fileName;
     }
     
+    /**
+     * this method is used to initialize all the changed files
+     */
     public void init() {
     	List<CompanyShares> companySharesList = new ArrayList<CompanyShares>();
 		try {
@@ -26,6 +41,9 @@ public class StockAccount implements StockInterface{
 		    JSONObject obj = (JSONObject) parser.parse(reader);
 		    JSONArray companyShares = (JSONArray) obj.get("companyShares");
 		    Iterator<JSONObject> iterator = companyShares.iterator();
+		    if(companyShares == null) {
+		    	return;
+		    }
 		    while (iterator.hasNext()) {
 		       CompanyShares companyShare = new CompanyShares();
 		       JSONObject compShare = iterator.next();
@@ -48,7 +66,7 @@ public class StockAccount implements StockInterface{
 		        companyShare.setList(transactionList);
 		        companySharesList.add(companyShare);
 		    }
-		        this.companyShares = companySharesList;
+		    this.companyShares = companySharesList;
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -60,7 +78,11 @@ public class StockAccount implements StockInterface{
        
     }
     
+    /**method used to update json files during buy/sell method 
+     * implemented
+     */
     private void update(String symbol, long noOfShares, CompanyShares companyShare, String state) {
+    	read();
         long prevShares = companyShare.getNoOfShares();
         if (state == Transaction.BUY) {
             companyShare.setNoOfShares(prevShares + noOfShares);
@@ -126,6 +148,9 @@ public class StockAccount implements StockInterface{
         return sharePrice * companyShare.getNoOfShares();
 	}
 
+	/**
+	 *method used to buy the stocks from json file
+	 */
 	@Override
 	public void buy(int amount, String symbol) {
 		read();
@@ -178,8 +203,12 @@ public class StockAccount implements StockInterface{
         
 	}
 
+	/**
+	 *method used to sell the stocks in json file
+	 */
 	@Override
 	public void sell(int amount, String symbol) {
+		read();
         long noOfShares = 0;
 
         for (CompanyShares companyShare : companyShares) {
@@ -242,6 +271,9 @@ public class StockAccount implements StockInterface{
        }       
 	}
 
+	/**
+	 *method used to print the report of the stock
+	 */
 	@Override
 	public void printReport() {
 		System.out.println("Stock Report");
