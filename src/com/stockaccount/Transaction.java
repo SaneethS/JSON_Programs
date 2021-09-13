@@ -1,5 +1,9 @@
 package com.stockaccount;
 
+/**
+ * @author saneeths
+ *class used to get date and time and history of tansaction
+ */
 public class Transaction {
 	
 	final static String BUY = "buy";
