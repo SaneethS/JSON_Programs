@@ -5,6 +5,7 @@ import com.jsoninventory.*;
 import com.stockaccount.CommercialDataProcessing;
 import com.stocklinkedlist.StockLinkedList;
 import com.stockmanagement.StockManagementSystem;
+import com.stockstack.StockStack;
 public class JSONMain {
 
 	public static void main(String[] args) {
@@ -20,6 +21,8 @@ public class JSONMain {
 		
 //		CommercialDataProcessing.commercialDataProcessing();
 		
-		StockLinkedList.stockLinkedList();
+//		StockLinkedList.stockLinkedList();
+		
+		StockStack.stockStack();
 	}
 }
