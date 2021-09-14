@@ -8,8 +8,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import com.stockaccount.CompanyShares;
-import com.stockaccount.StockAccount;
+
 
 public class StockLinkedList {
 	final static String STOCKS_FILE = "data/stockAccount.json";
@@ -94,10 +93,10 @@ public class StockLinkedList {
         
         System.out.println("Select the stock you want to Sell");
         int count = 1;
-        for (CompanyShares companyShare : stock.getCompanyShares()) {
+        for (Node<CompanyShares> companyShare : stock.getCompanyShares()) {
             System.out.println(count + ":");
-            System.out.println("Stock Symbol : " + companyShare.getStockSymbol());
-            System.out.println("Number Of Shares : " + companyShare.getNoOfShares());
+            System.out.println("Stock Symbol : " + companyShare.getData().getStockSymbol());
+            System.out.println("Number Of Shares : " + companyShare.getData().getNoOfShares());
             System.out.println();
             count++;
         }
@@ -110,7 +109,7 @@ public class StockLinkedList {
 
         System.out.println("Enter number of shares to sell");
         int amount = scanner.nextInt();
-        CompanyShares selectedStock = stock.getCompanyShares().get(stockChoice - 1);
+        CompanyShares selectedStock = stock.getCompanyShares().get(stockChoice - 1).getData();
         while (amount > (long) selectedStock.getNoOfShares() || amount<=0)
         {
             System.out.println("Enter a valid amount");
