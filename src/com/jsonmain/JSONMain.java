@@ -1,5 +1,6 @@
 package com.jsonmain;
 import com.deckofcards.DeckOfCards;
+import com.deckofcardsqueue.DeckOfCardsQueue;
 import com.inventorymanagement.InventoryManager;
 import com.jsoninventory.*;
 import com.stockaccount.CommercialDataProcessing;
@@ -26,6 +27,8 @@ public class JSONMain {
 		
 //		StockStack.stockStack();
 		
-		StockQueue.stockQueue();
+//		StockQueue.stockQueue();
+		
+		DeckOfCardsQueue.deckOfCardsQueue();
 	}
 }
